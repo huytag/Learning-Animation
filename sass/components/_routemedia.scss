@@ -1,0 +1,156 @@
+.menu {
+  &-item,
+  &-open-button {
+    background: #eeeeee;
+    border-radius: 100%;
+    width: 80px;
+    height: 80px;
+    margin-left: -40px;
+    position: absolute;
+    color: #ffffff;
+    text-align: center;
+    line-height: 80px;
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    transition: -webkit-transform ease-out 200ms;
+    transition: transform ease-out 200ms;
+    transition: transform ease-out 200ms, -webkit-transform ease-out 200ms;
+  }
+  &-open-button {
+    z-index: 2;
+    -webkit-transition-timing-function: cubic-bezier(0.175, 0.885,0.32,1.275);
+    transition-timing-function: cubic-bezier(0.175, 0.885,0.32,1.275);
+    transition-duration: 400ms;
+    transform: scale(1.1,1.1) translate3d(0,0,0);
+    -webkit-transform: scale(1.1,1.1) translate3d(0,0,0);
+    cursor: pointer;
+    box-shadow: 3px 3px 0 0 rgba(58,58,58,0.14);
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+  /*active menu button*/
+  &-open:checked ~ .menu-item {
+    transition-timing-function: cubic-bezier(0.935,0.34,1.33);
+    -webkit-transition-timing-function: cubic-bezier(0.935,0.34,1.33);
+
+  }
+  /* 1st */
+  &-open:checked ~ .menu-item:nth-child(3) {
+    transition-duration: 180ms;
+    -webkit-transition-duration: 180ms;
+    transform: translate3d(0.08261px, -104.99997px,0);
+  } 
+  &-open:checked ~ .menu-item:nth-child(4) {
+    transition-duration: 280ms;
+    -webkit-transition-duration: 280ms;
+    transform: translate3d(90.9466px, -52.475px,0);
+  } 
+  &-open:checked ~ .menu-item:nth-child(5) {
+    transition-duration: 380ms;
+    -webkit-transition-duration: 380ms;
+    transform: translate3d(90.9466px, 52.475px,0);
+  } 
+  &-open:checked ~ .menu-item:nth-child(6) {
+    transition-duration: 480ms;
+    -webkit-transition-duration: 480ms;
+    transform: translate3d(0.8361px, 104.99997px,0);
+  } 
+  &-open:checked ~ .menu-item:nth-child(7) {
+    transition-duration: 580ms;
+    -webkit-transition-duration: 580ms;
+    transform: translate3d(-90.9466px, 52.475px,0);
+  } 
+  &-open:checked ~ .menu-item:nth-child(8) {
+    transition-duration: 680ms;
+    -webkit-transition-duration: 680ms;
+    transform: translate3d(-90.9466px, -52.475px,0);
+  } 
+
+  /*set color*/
+  &-open:checked ~ .menu-item:nth-child(3) {
+    background-color: #669ae1;
+    transition: all 0.3s linear;
+    cursor: pointer;
+    &:hover {
+      background-color: white;
+      color: #669ae1;
+    }
+  } 
+  &-open ~ .menu-item:nth-child(4) {
+    transition: all 0.3s linear;
+    cursor: pointer;
+    background-color: #70cc72;
+    &:hover {
+      background-color: white;
+      color: #70cc72;
+    }
+  } 
+  &-open ~ .menu-item:nth-child(5) {
+    background-color: #fe4365;
+    transition: all 0.3s linear;
+    cursor: pointer;  
+    &:hover {
+      background-color: white;
+      color: #fe4365;
+    }
+  } 
+  &-open ~ .menu-item:nth-child(6) {
+    background-color: #c49cde;
+    transition: all 0.3s linear;
+    cursor: pointer;
+    &:hover {
+      background-color: white;
+      color: #c49cde;
+    }
+  } 
+  &-open ~ .menu-item:nth-child(7) {
+    background-color: #fc913a;
+    transition: all 0.3s linear;
+    cursor: pointer;
+    &:hover {
+      background-color: white;
+      color: #fc913a;
+    }
+  } 
+  &-open ~ .menu-item:nth-child(8) {
+    background-color: #62c2e4;
+    transition: all 0.3s linear;
+    cursor: pointer;
+    &:hover {
+      background-color: white;
+      color: #62c2e4;
+    }
+  }
+  .line {
+    width: 25px;
+    height: 3px;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: #596778;
+    margin-left: -12.5;
+    margin-top: -1.5px;
+    // transform: translateX(-50%);
+    transition: transform 0.7s;
+    &.line1 {
+      transform: translateX(-50%) translate3d(0,-8px,0);
+    }
+    &.line2 {
+      transform: translateX(-50%) translate3d(0,0,0);
+    }
+    &.line3 {
+      transform: translateX(-50%) translate3d(0,8px,0);
+    }
+  }
+  &-open:checked + .menu-open-button .line1 {
+    transform: translateX(-50%) translate3d(0,0,0) rotate(-405deg);
+  }
+  &-open:checked + .menu-open-button .line2 {
+    transform: translateX(-50%) translate3d(0,0,0) scale(0.1);
+  }
+  &-open:checked + .menu-open-button .line3 {
+    transform: translateX(-50%) translate3d(0,0,0) rotate(225deg);
+  }
+}

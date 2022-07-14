@@ -1,0 +1,60 @@
+.circle_gradient {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px #fff5, 0 0 0 20px #333, 0 0 0 22px #fff, 0 0 50px #fff,
+    0 0 450px #fff;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 170px;
+    border-radius: 2px;
+    background: linear-gradient(0deg, transparent, #fff);
+    transform-origin: bottom;
+    animation: animateNiddles 20s steps(60) infinite;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 130px;
+    border-radius: 2px;
+    background: linear-gradient(0deg, transparent, #fff);
+    transform-origin: bottom;
+    animation: animateNiddles 120s steps(60) infinite;
+  }
+  ul li {
+    position: absolute;
+    list-style: none;
+    top: 10px;
+    transform-origin: 0 240px;
+    transform: rotate(calc(21deg * var(--i)));
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    span {
+      display: inline-block;
+      color: #fff;
+      transform: rotate(calc(-21deg * var(--i)));
+      text-shadow:  0 0 15px #fff,
+      0 0 35px #fff,
+      0 0 75px #fff,
+      0 0 150px #fff;
+    }
+  }
+}
+
+@keyframes animateNiddles {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
