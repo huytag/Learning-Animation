@@ -1,0 +1,55 @@
+.hover-line-icon {
+    ul {
+        display: flex;
+        position: relative;
+        gap: 40px;
+        li {
+            position: relative;
+            list-style: none;
+            width: 120px;
+            height: 120px;
+            box-shadow: 0px 15px 35px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #fff;
+            cursor: pointer;
+            .fa {
+                font-size: 6rem;
+                -webkit-text-stroke: 2px var(--clr);
+                color: transparent;
+            }
+            &::before {
+                content: '';
+                position: absolute;
+                width: 100%;
+                top: 0;
+                left: 0;
+                height: 0;
+                border-bottom: 4px solid var(--clr);
+                transition: 0.5s ease-in-out;
+                font-family: fontAwesome;
+                text-align: center;
+                line-height: 120px;
+                font-size: 6rem;
+                color: var(--clr);
+                overflow: hidden;
+            }
+            &:hover::before {
+                height: calc(100% - 4px);
+            }
+            &:nth-child(1):before {
+                content: '\f099';
+            }
+            &:nth-child(2):before {
+                content: '\f16d';
+            }
+            &:nth-child(3):before {
+                content: '\f232';
+            }
+            &:nth-child(4):before {
+                content: '\f16a';
+            }
+        }       
+    }
+}
